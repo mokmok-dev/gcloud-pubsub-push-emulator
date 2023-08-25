@@ -1,0 +1,51 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feat'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'refactor'
+  - title: '🧰 Maintenance'
+    labels: 
+      - 'chore'
+  - title: '📦 dependencies'
+    labels:
+      - 'dependencies'
+change-template: '- $TITLE (#$NUMBER) by @$AUTHOR'
+change-title-escapes: '\<*_&'
+autolabeler:
+  - label: feat
+    title:
+      - '/^feat:.+/'
+  - label: fix
+    title:
+      - '/^fix:.+/'
+  - label: refactor
+    title:
+      - '/^refactor:.+/'
+  - label: chore
+    title:
+      - '/^chore:.+/'
+      - '/^chore\(deps\):.+/'
+  - label: dependencies
+    title:
+      - '/chore\(deps\)[/-].+/'
+      - '/fix\(deps\)[/-].+/'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+template: |
+  ## Changes
+
+  $CHANGES

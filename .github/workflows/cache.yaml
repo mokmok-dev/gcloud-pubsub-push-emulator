@@ -1,0 +1,18 @@
+name: Cache
+on:
+  pull_request:
+    types:
+      - closed
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-cache
+  cancel-in-progress: true
+jobs:
+  clean:
+    name: clean
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: mokmok-dev/delete-actions-cache@v0.1.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
