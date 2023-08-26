@@ -22,17 +22,17 @@ def main() -> None:
 
         for topic in topics:
             # create topic
-            print(f"python3 publisher.py {project} create {topic}")
+            subprocess.call(f"python3 publisher.py {project} create {topic}", shell=True)
 
             topic, *subscription = topic.split(':')
             if subscription:
                 subscription, *endpoint = subscription
                 if subscription and endpoint:
                     # create topic with push endpoint
-                    print(f"python3 subscriber.py {project} create-push {topic} {subscription} {endpoint[0]}")
+                    subprocess.call(f"python3 subscriber.py {project} create-push {topic} {subscription} {endpoint[0]}", shell=True)
                 if subscription and not endpoint:
                     # create topic with subscription
-                    print(f"python3 subscriber.py {project} create {topic} {subscription}")
+                    subprocess.call(f"python3 subscriber.py {project} create {topic} {subscription}", shell=True)
 
 if __name__ == '__main__':
     main()
