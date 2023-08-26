@@ -22,7 +22,6 @@ jobs:
         with:
           images: ghcr.io/mokmok-dev/gcloud-pubsub-push-emulator
           tags: |
-            type=raw,value=latest
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
