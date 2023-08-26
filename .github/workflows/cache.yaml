@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: mokmok-dev/delete-actions-cache@v0.1.0
+      - uses: mokmok-dev/delete-actions-cache@v0.1.1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
