@@ -12,7 +12,7 @@ jobs:
     name: clean
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: mokmok-dev/delete-actions-cache@v0.1.0
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
