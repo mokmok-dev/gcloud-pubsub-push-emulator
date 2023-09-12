@@ -28,7 +28,7 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
             type=sha,format=short,prefix=
       - name: Login GitHub Packages
-        uses: docker/login-action@v2.2.0
+        uses: docker/login-action@v3.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
