@@ -5,7 +5,7 @@ ARG WAITFOR_VERSION=2.2.4
 RUN curl -vsSLo /tmp/wait-for "https://github.com/eficode/wait-for/releases/download/v${WAITFOR_VERSION}/wait-for"
 RUN chmod +x /tmp/wait-for
 
-FROM google/cloud-sdk:446.0.1
+FROM google/cloud-sdk:447.0.0
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
